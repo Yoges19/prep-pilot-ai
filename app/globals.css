@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.prose {
+  color: white;
+  line-height: 1.8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.prose h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1.2rem;
+  margin-bottom: 0.8rem;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.prose h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+
+.prose {
+  max-width: 100%;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  color: white;
+  font-weight: bold;
+}
+
+.prose p {
+  color: #d1d5db;
+}
+
+.prose strong {
+  color: white;
+}
+
+.prose ul {
+  color: #d1d5db;
+}
+
+.prose code {
+  background: #1e293b;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: #38bdf8;
+}
+
+.prose pre {
+  background: #0f172a;
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+

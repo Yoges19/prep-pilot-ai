@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SidebarItem from "@/components/SidebarItem";
+import {
+  LayoutDashboard,
+  Target,
+  Map,
+  MessageSquare,
+  User,
+} from "lucide-react";
+import LogoutButton from '@/components/LogoutButton';
+import Link from "next/link";
+import ButtonVisible from '@/components/Navbar';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +38,62 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div  className="bg-gradient-to-r from-slate-900 via-indigo-400 to-purple-400 min-h-screen">
+    {/* nav bar */}
+    <nav className="bg-slate-900/50 text-white border-b border-white/10 p-4 relative">
+    <h1 className="text-2xl font-bold">PrepPilot AI</h1>
+
+    <p className="text-sm text-gray-500">
+      Your AI-powered interview preparation companion
+    </p>
+
+    <div className="absolute right-4 top-4 flex items-center gap-3">
+      <ButtonVisible />
+      <LogoutButton />
+    </div>
+</nav>
+   <div className="flex">
+   {/* sidebar */}
+
+   <section className="w-72 min-h-screen bg-black/20 backdrop-blur-lg text-white p-4">
+     <h2 className="text-xl font-bold mb-4 p-4">Sidebar</h2>
+    <ul className="space-y-2">
+      <SidebarItem
+        title="Dashboard"
+        href="/dashboard"
+        icon={<LayoutDashboard size={20} />}
+      />
+
+      <SidebarItem
+        title="Tracker"
+        href="/tracker"
+        icon={<Target size={20} />}
+      />
+
+      <SidebarItem
+        title="Roadmap"
+        href="/roadmap"
+        icon={<Map size={20} />}
+      />
+
+      <SidebarItem
+        title="Interview Trainer"
+        href="/interview-trainer"
+        icon={<MessageSquare size={20} />}
+      />
+
+      <SidebarItem
+        title="Profile"
+        href="/profile"
+        icon={<User size={20} />}
+      />
+    </ul>
+   </section>
+   {children}
+   </div>
+   </div>
+      </body>
     </html>
   );
 }
