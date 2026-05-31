@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PrepPilot AI 🚀
 
-## Getting Started
+PrepPilot AI is an AI-powered personalized interview preparation and learning roadmap platform built using Coral, Groq, Supabase, Next.js, and TailwindCSS.
 
-First, run the development server:
+## Problem
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Most interview preparation platforms provide generic learning plans and static question banks. Users struggle because:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* learning is not personalized
+* weak areas are not tracked
+* previous learning history is ignored
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Solution
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+PrepPilot AI uses Coral as a memory retrieval layer to build personalized AI mentorship experiences.
 
-## Learn More
+The system:
 
-To learn more about Next.js, take a look at the following resources:
+* remembers previous interview chats
+* tracks completed and pending learning tasks
+* identifies weak technical areas
+* generates adaptive AI roadmaps
+* acts as a personalized AI interview trainer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Features
 
-## Deploy on Vercel
+## AI Interview Trainer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Personalized interview preparation
+* Context-aware AI responses
+* Follow-up interview questions
+* Weak-area focused learning
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## AI Roadmap Generator
+
+* Personalized learning roadmaps
+* Beginner → Advanced structured plans
+* Project suggestions
+* Interview preparation guidance
+* Weekly study plans
+
+## Memory System (Coral + Supabase)
+
+* Stores user interview history
+* Tracks learning progress
+* Retrieves contextual memory before AI generation
+
+---
+
+# Tech Stack
+
+* Next.js 16
+* TailwindCSS
+* Supabase
+* Groq API
+* Coral AI
+* React Markdown
+
+---
+
+# Architecture
+
+User → Next.js Frontend → API Routes → Coral Memory Layer → Supabase Retrieval → Groq AI → Personalized Response
+
+---
+
+# Coral Usage
+
+Coral is used as the primary memory retrieval layer.
+
+It:
+
+* retrieves previous interview conversations
+* tracks user learning goals
+* stores contextual learning memory
+* improves AI personalization
+
+---
+
+# Future Improvements
+
+* Voice interviews
+* AI mock interview scoring
+* Resume analysis
+* Company-specific preparation
+* Real-time AI coaching
+
+---
+
+# Demo
+
+(Add your demo video link here)
+
+# Author
+
+Yogeswari B
