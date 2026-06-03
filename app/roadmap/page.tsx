@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from "react-markdown";
 import { supabase } from '@/lib/supabase';
+import ProtectedRoute from '@/components/ProtectedRoute';
 export default function Roadmap() {
   const[goal, setGoal] = useState("");
   const[roadmap, setRoadmap] = useState("");
@@ -36,20 +37,20 @@ export default function Roadmap() {
   }
 
 return (
-  <div className="h-screen w-full overflow-hidden bg-[#020617] text-white px-4 md:px-10 py-6">
-    
+  <ProtectedRoute>
+  <div className="min-h-screen w-full bg-[#020617] text-white px-4 md:px-10 py-6">
      <div className="w-full h-full flex flex-col">
 
       <div className="mb-10 text-center">
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+        <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
           AI Personalized Roadmap
         </h1>
 
-        <p className="text-gray-400 mt-4 text-lg">
+        <p className="text-gray-400 mt-4 text-sm md:text-lg">
           Personalized learning roadmap powered by Coral + Groq AI
         </p>
       </div>
-            <div className="flex items-center gap-3">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
 
         <input
           type="text"
@@ -61,13 +62,13 @@ return (
             }
           }}
           placeholder="Become a Full Stack Developer..."
-          className="flex-1 p-5 rounded-2xl bg-[#111827] border border-gray-700 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full flex-1 p-4 md:p-5 rounded-2xl bg-[#111827] border border-gray-700 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
 
         <button
           onClick={generateRoadmap}
           disabled={loading}
-          className="px-8 py-5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 font-semibold disabled:opacity-50"
+          className="w-full md:w-auto px-8 py-4 md:py-5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 font-semibold disabled:opacity-50"
         >
           Generate
         </button>
@@ -84,7 +85,7 @@ return (
       {roadmap && (
         <div className="mt-8 flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-transparent bg-[#0F172A] border border-gray-800  p-8 rounded-2xl shadow-2xl">
 
-          <div className="prose prose-invert max-w-none prose-headings:text-indigo-300 prose-strong:text-white prose-li:text-gray-300">
+          <div className="prose prose-invert max-w-none prose-sm md:prose-lg prose-headings:text-indigo-300 prose-strong:text-white prose-li:text-gray-300">
 
             <ReactMarkdown>
               {roadmap}
@@ -98,5 +99,6 @@ return (
   </div>
 
   </div>
+  </ProtectedRoute>
 );
 }

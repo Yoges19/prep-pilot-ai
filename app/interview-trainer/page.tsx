@@ -3,6 +3,7 @@ import { SendHorizontal } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
 import ReactMarkdown from "react-markdown";
+import ProtectedRoute from '@/components/ProtectedRoute';
 
 
 type Message = {
@@ -54,9 +55,10 @@ export default function InterviewTrainer() {
     }
     }
     return (
-    <div className="h-screen w-full bg-[#020617] text-white p-8 overflow-hidden">
+      <ProtectedRoute>
+    <div className="h-screen w-full bg-[#020617] text-white p-4 md:p-8 overflow-hidden">
       <div className="max-w-5xl mx-auto h-full flex flex-col">
-      <h1 className="text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Hii..I am your Interview Trainer</h1>
+      <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Hii..I am your Interview Trainer</h1>
   
         {loading && (
          <div className="animate-pulse text-gray-400">
@@ -68,7 +70,7 @@ export default function InterviewTrainer() {
         {messages.map((message, index) => (
           <div
             key={index}
-            className={`p-5 rounded-2xl max-w-3xl shadow-lg ${
+            className={`p-5 rounded-2xl max-w-full md:max-w-3xl shadow-lg ${
               message.role === "user"
                 ? "bg-indigo-600 text-white self-end"
                 : "bg-[#111827] text-gray-100 self-start border border-gray-800"
@@ -89,7 +91,7 @@ export default function InterviewTrainer() {
           </div>
         ))}
         </div>
-        <div className="flex items-center gap-3 mt-4">
+        <div className="flex gap-3">
   
         <input
           type="text"
@@ -101,7 +103,7 @@ export default function InterviewTrainer() {
               ansData();
             }
                 }}
-                className="flex-1 p-4 rounded-2xl bg-[#111827] border border-gray-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="flex-1 p-3 md:p-4 rounded-2xl bg-[#111827] border border-gray-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
 
               <button
@@ -115,6 +117,6 @@ export default function InterviewTrainer() {
           </div>
       </div>
     </div>
-    
+    </ProtectedRoute>
   );
 }
