@@ -54,33 +54,10 @@ export default function InterviewTrainer() {
     }
     }
     return (
-    <div className="h-screen bg-[#020617] text-white p-8 overflow-hidden">
+    <div className="h-screen w-full bg-[#020617] text-white p-8 overflow-hidden">
       <div className="max-w-5xl mx-auto h-full flex flex-col">
-      <h1 className="text-3xl font-bold mb-4">Hii..I am your Interview Trainer</h1>
-      <div className="flex items-center gap-3 mt-4">
+      <h1 className="text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Hii..I am your Interview Trainer</h1>
   
-      <input
-        type="text"
-        value={question}
-        placeholder="Ask me anything about interview preparation..."
-        onChange={(event) => setQuestion(event.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            ansData();
-          }
-              }}
-              className="flex-1 p-4 rounded-2xl bg-[#111827] border border-gray-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-
-            <button
-              disabled={loading}
-              onClick={ansData}
-              className="h-14 w-14 flex items-center justify-center rounded-2xl bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 disabled:opacity-50"
-            >
-              <SendHorizontal size={22} />
-            </button>
-
-        </div>
         {loading && (
          <div className="animate-pulse text-gray-400">
             AI is thinking...
@@ -112,6 +89,30 @@ export default function InterviewTrainer() {
           </div>
         ))}
         </div>
+        <div className="flex items-center gap-3 mt-4">
+  
+        <input
+          type="text"
+          value={question}
+          placeholder="Ask me anything about interview preparation..."
+          onChange={(event) => setQuestion(event.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              ansData();
+            }
+                }}
+                className="flex-1 p-4 rounded-2xl bg-[#111827] border border-gray-700 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+
+              <button
+                disabled={loading}
+                onClick={ansData}
+                className="h-14 w-14 flex items-center justify-center rounded-2xl bg-indigo-600 hover:bg-indigo-700 transition-all duration-200 disabled:opacity-50"
+              >
+                <SendHorizontal size={22} />
+              </button>
+
+          </div>
       </div>
     </div>
     

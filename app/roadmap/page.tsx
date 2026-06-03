@@ -36,7 +36,7 @@ export default function Roadmap() {
   }
 
 return (
-  <div className="h-screen overflow-hidden bg-[#020617] text-white px-4 md:px-10 py-6">
+  <div className="h-screen w-full overflow-hidden bg-[#020617] text-white px-4 md:px-10 py-6">
     
      <div className="w-full h-full flex flex-col">
 
@@ -49,8 +49,7 @@ return (
           Personalized learning roadmap powered by Coral + Groq AI
         </p>
       </div>
-
-      <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3">
 
         <input
           type="text"
@@ -81,8 +80,9 @@ return (
         </div>
       )}
 
+
       {roadmap && (
-  <div className="mt-8 flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-transparent bg-[#0F172A] border border-gray-800  p-8 rounded-2xl shadow-2xl">
+        <div className="mt-8 flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-indigo-600 scrollbar-track-transparent bg-[#0F172A] border border-gray-800  p-8 rounded-2xl shadow-2xl">
 
           <div className="prose prose-invert max-w-none prose-headings:text-indigo-300 prose-strong:text-white prose-li:text-gray-300">
 
@@ -94,9 +94,8 @@ return (
         </div>
       )}
       <div ref={bottomRef}></div>
-
-
-    </div>
+      
+  </div>
 
   </div>
 );
